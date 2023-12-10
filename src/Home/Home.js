@@ -17,7 +17,7 @@ const Home = () => {
 
   const db = getDatabase();
 const resetUserID = (userId) => {
-  set(ref(db, "userrand/" + userId), {
+  set(ref(db, "user_auth/" + userId), {
     isUserLog: false,
   });
   navigate("/")
