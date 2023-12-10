@@ -72,14 +72,12 @@ const Login = () => {
         // Signed in
         const userId = userCredential.user.uid;
         getEncryptedKeys(userId);
-        console.log("Kd🗡 ");
         const user = userCredential.user;
        
         setShowLoaderModal(true);
         setUserId(user.uid);
         Push(user.uid);
         console.log(user.uid);
-        // notificationToken(user.uid)
 
         console.log(user);
       })
@@ -133,7 +131,7 @@ const Login = () => {
             const decryptedUserId = decryptedBytes.toString(CryptoJS.enc.Utf8);
 
             console.log("Decrypted UserId:", decryptedUserId);
-            notificationToken(encryptedUserId);
+            notificationToken(encryptedUseId);
           });
         }
       })

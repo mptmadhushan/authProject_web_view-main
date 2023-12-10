@@ -45,11 +45,6 @@ const SignUp = () => {
     return rsaKeyPair.publicKey;
   };
   
-  const generatePrivateKey = (seed) =>
-    CryptoJS.SHA256(seed).toString(CryptoJS.enc.Hex);
-
-  const generatePublicKey = (seed) => generatePrivateKey(seed); 
-
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -64,8 +59,8 @@ const SignUp = () => {
      // Generate dynamic RSA key pair based on a random seed
      const modulusBitLength = 2048;
      const rsaKeyPair = {
-       privateKey: generatePrivateKey(userId),
-       publicKey: await generatePublicKey(modulusBitLength, userId),
+       privateKey: _generatePrivateKey(userId),
+       publicKey: await _generatePublicKey(modulusBitLength, userId),
      };
  
      console.log("RSA Key Pair:", rsaKeyPair);
